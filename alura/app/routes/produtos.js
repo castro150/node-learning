@@ -1,9 +1,10 @@
 module.exports = (app) => {
-    app.get('/produtos', (request, response) => {
+    app.get('/produtos', (request, response, next) => {
         let connection = app.infra.connectionFactory();
         let produtosDAO = new app.infra.ProdutosDAO(connection);
 
         produtosDAO.lista((err, results) => {
+            if (err) return next(err);
             response.format({
                 html: () => {
                     response.render('produtos/lista', { lista: results });
