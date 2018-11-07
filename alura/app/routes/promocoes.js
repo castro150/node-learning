@@ -13,7 +13,7 @@ module.exports = (app) => {
 
     app.post('/promocoes', (request, response, next) => {
         let promocao = request.body;
-        console.log(promocao);
+        app.get('io').emit('novaPromocao', promocao);
         response.redirect('promocoes/form');
     });
 }
