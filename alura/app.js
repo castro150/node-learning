@@ -4,6 +4,7 @@ let io = require('socket.io')(http);
 
 app.set('io', io);
 
-http.listen(3000, () => {
-    console.log('Servidor rodando.');
+let porta = process.env.PORT || 3000;
+http.listen(porta, () => {
+    console.log(`Servidor rodando na porta ${porta}.`);
 });

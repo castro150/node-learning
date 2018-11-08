@@ -4,7 +4,9 @@
 	"description": "site da casa do codigo",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node app",
+		"dev": "nodemon app"
 	},
 	"author": "Rafael Carneiro de Castro",
 	"license": "ISC",
@@ -20,5 +22,9 @@
 	"devDependencies": {
 		"mocha": "^5.2.0",
 		"supertest": "^3.3.0"
+	},
+	"engines": {
+		"node": "8.6.0",
+		"npm": "5.3.0"
 	}
 }
